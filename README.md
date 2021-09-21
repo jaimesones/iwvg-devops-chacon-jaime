@@ -3,6 +3,7 @@
 > Este proyecto es una Plantilla de apoyo docente de la asignatura.
 
 ## Estado del código
+![Github Actions workflow](https://github.com/jaimesones/iwvg-devops-chacon-jaime/.github/workflows/test-sonar.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jaimesones_iwvg-devops-chacon-jaime&metric=alert_status)](https://sonarcloud.io/dashboard?id=jaimesones_iwvg-devops-chacon-jaime)
 
 ### :gear: Instalación del proyecto
