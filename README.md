@@ -5,6 +5,7 @@
 ## Estado del código
 [![DevOps](https://github.com/jaimesones/iwvg-devops-chacon-jaime/actions/workflows/%20test-sonar.yml/badge.svg)](https://github.com/jaimesones/iwvg-devops-chacon-jaime/actions/workflows/%20test-sonar.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jaimesones_iwvg-devops-chacon-jaime&metric=alert_status)](https://sonarcloud.io/dashboard?id=jaimesones_iwvg-devops-chacon-jaime)
+[![BCH compliance](https://bettercodehub.com/edge/badge/jaimesones/iwvg-devops-chacon-jaime?branch=develop)](https://bettercodehub.com/)
 
 ### :gear: Instalación del proyecto
 1. Clonar el repositorio en tu equipo, **mediante consola**:
