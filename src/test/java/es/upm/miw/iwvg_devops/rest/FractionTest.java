@@ -60,8 +60,9 @@ public class FractionTest {
         assertEquals(true, fraction.isProper());
     }
 
+    @Test
     void testisImproper() {
-        assertEquals(false, fraction.isProper());
+        assertEquals(false, fraction.isImproper());
     }
 
     @Test
