@@ -1,4 +1,4 @@
-package practica;
+package es.upm.miw.iwvg_devops.practica;
 
 import java.util.ArrayList;
 import java.util.List;
