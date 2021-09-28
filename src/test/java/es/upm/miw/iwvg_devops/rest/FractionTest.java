@@ -4,6 +4,9 @@ import es.upm.miw.iwvg_devops.practica.Fraction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FractionTest {
@@ -50,6 +53,61 @@ public class FractionTest {
     void testsetDenominator() {
         fraction.setDenominator(4);
         assertEquals(4, fraction.getDenominator());
+    }
+
+    @Test
+    void testisProper() {
+        assertEquals(true, fraction.isProper());
+    }
+
+    void testisImproper() {
+        assertEquals(false, fraction.isProper());
+    }
+
+    @Test
+    void testisEquivalent() {
+        List<int[]> fractions = new ArrayList<int[]>();
+        int[] anExample1 = {2, 1};
+        int[] anExample2 = {6, 3};
+        fractions.add(anExample1);
+        fractions.add(anExample2);
+        assertEquals(true, fraction.isEquivalent(fractions));
+    }
+
+    @Test
+    void testsadd() {
+        List<int[]> fractions = new ArrayList<int[]>();
+        int[] anExample1 = {2, 1};
+        int[] anExample2 = {5, 3};
+        fractions.add(anExample1);
+        fractions.add(anExample2);
+        int[] testresult = fraction.add(fractions);
+        assertEquals(7, testresult[0]);
+        assertEquals(4, testresult[1]);
+    }
+
+    @Test
+    void testsproduct() {
+        List<int[]> fractions = new ArrayList<int[]>();
+        int[] anExample1 = {2, 1};
+        int[] anExample2 = {5, 3};
+        fractions.add(anExample1);
+        fractions.add(anExample2);
+        int[] testresult = fraction.product(fractions);
+        assertEquals(10, testresult[0]);
+        assertEquals(3, testresult[1]);
+    }
+
+    @Test
+    void testsdivide() {
+        List<int[]> fractions = new ArrayList<int[]>();
+        int[] anExample1 = {2, 1};
+        int[] anExample2 = {5, 3};
+        fractions.add(anExample1);
+        fractions.add(anExample2);
+        int[] testresult = fraction.divide(fractions);
+        assertEquals(6, testresult[0]);
+        assertEquals(5, testresult[1]);
     }
 
 }
