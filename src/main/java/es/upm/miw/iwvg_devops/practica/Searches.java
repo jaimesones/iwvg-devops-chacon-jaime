@@ -21,4 +21,12 @@ public class Searches {
                 .distinct();
     }
 
+    public Stream<Double> findDecimalImproperFractionByUserName(String userName) {
+        return new UsersDatabase().findAll()
+                .filter(user -> userName.equals(user.getName()))
+                .flatMap(user -> user.getFractions().stream())
+                .filter(fraction -> fraction.isImproper())
+                .map(Fraction::decimal);
+    }
+
 }

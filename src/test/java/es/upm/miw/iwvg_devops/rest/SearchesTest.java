@@ -22,4 +22,10 @@ public class SearchesTest {
                 .collect(Collectors.toList()));
     }
 
+    @Test
+    void testfindDecimalImproperFractionByUserName() {
+        assertEquals(List.of(2.0, 1.3333333333333333), new Searches().findDecimalImproperFractionByUserName("Ana")
+                .collect(Collectors.toList()));
+    }
+
 }
