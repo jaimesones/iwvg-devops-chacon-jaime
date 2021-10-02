@@ -1,7 +1,5 @@
 package es.upm.miw.iwvg_devops.practica;
 
-import java.util.List;
-
 public class Fraction {
     
     private int numerator;
@@ -45,39 +43,43 @@ public class Fraction {
                 '}';
     }
 
-    public boolean isProper() {return (numerator < denominator);
+    public boolean isProper() {
+        return (numerator < denominator);
     }
 
-    public boolean isImproper() {return (numerator > denominator);
+    public boolean isImproper() {
+        return (numerator > denominator);
     }
 
-    public boolean isEquivalent(List<int[]> fractions) {
-        int num1 = fractions.get(0)[0];
-        int num2 = fractions.get(0)[1];
-        int num3 = fractions.get(1)[0];
-        int num4 = fractions.get(1)[1];
-        return (num1*num4 == num2*num3);
+    public boolean isEquivalent(Fraction fraction) {
+
+        return (this.numerator * fraction.denominator == this.denominator * fraction.numerator);
     }
 
-    public int[] add(List<int[]> fractions) {
+    public void sum(Fraction sumator) {
 
-        int result[] = {fractions.get(0)[0] + fractions.get(1)[0],fractions.get(0)[1] + fractions.get(1)[1]};
+        int mnc = this.denominator  * sumator.getDenominator();
 
-        return (result);
+        this.numerator = mnc/this.denominator * this.numerator + mnc/sumator.getDenominator() * sumator.getNumerator();
+
+        this.denominator = mnc;
+
     }
 
-    public int[] product(List<int[]> fractions) {
+    public void multiply(Fraction mult) {
 
-        int result[] = {fractions.get(0)[0] * fractions.get(1)[0],fractions.get(0)[1] * fractions.get(1)[1]};
+        this.numerator = this.numerator * mult.getNumerator();
 
-        return (result);
+        this.denominator = this.denominator * mult.getDenominator();
+
     }
 
-    public int[] divide(List<int[]> fractions) {
+    public void divide(Fraction divisor) {
 
-        int result[] = {fractions.get(0)[0] * fractions.get(1)[1],fractions.get(0)[1] * fractions.get(1)[0]};
+        this.numerator = this.numerator * divisor.getDenominator();
 
-        return (result);
+        this.denominator = this.denominator * divisor.getNumerator();
+
     }
 
 }
