@@ -4,8 +4,6 @@ import es.upm.miw.iwvg_devops.practica.Fraction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -67,48 +65,32 @@ public class FractionTest {
 
     @Test
     void testisEquivalent() {
-        List<int[]> fractions = new ArrayList<int[]>();
-        int[] anExample1 = {2, 1};
-        int[] anExample2 = {6, 3};
-        fractions.add(anExample1);
-        fractions.add(anExample2);
-        assertEquals(true, fraction.isEquivalent(fractions));
+        Fraction fraction = new Fraction(2,3);
+        assertEquals(false, fraction.isEquivalent(new Fraction(1,2)));
     }
 
     @Test
-    void testsadd() {
-        List<int[]> fractions = new ArrayList<int[]>();
-        int[] anExample1 = {2, 1};
-        int[] anExample2 = {5, 3};
-        fractions.add(anExample1);
-        fractions.add(anExample2);
-        int[] testresult = fraction.add(fractions);
-        assertEquals(7, testresult[0]);
-        assertEquals(4, testresult[1]);
+    void testsum() {
+        Fraction fraction = new Fraction(2,3);
+        fraction.sum(new Fraction(1,3));
+        assertEquals(9, fraction.getNumerator());
+        assertEquals(9, fraction.getDenominator());
     }
 
     @Test
-    void testsproduct() {
-        List<int[]> fractions = new ArrayList<int[]>();
-        int[] anExample1 = {2, 1};
-        int[] anExample2 = {5, 3};
-        fractions.add(anExample1);
-        fractions.add(anExample2);
-        int[] testresult = fraction.product(fractions);
-        assertEquals(10, testresult[0]);
-        assertEquals(3, testresult[1]);
+    void testsmultiply() {
+        Fraction fraction = new Fraction(2,3);
+        fraction.multiply(new Fraction(1,2));
+        assertEquals(2, fraction.getNumerator());
+        assertEquals(6, fraction.getDenominator());
     }
 
     @Test
     void testsdivide() {
-        List<int[]> fractions = new ArrayList<int[]>();
-        int[] anExample1 = {2, 1};
-        int[] anExample2 = {5, 3};
-        fractions.add(anExample1);
-        fractions.add(anExample2);
-        int[] testresult = fraction.divide(fractions);
-        assertEquals(6, testresult[0]);
-        assertEquals(5, testresult[1]);
+        Fraction fraction = new Fraction(2,3);
+        fraction.divide(new Fraction(1,2));
+        assertEquals(4, fraction.getNumerator());
+        assertEquals(3, fraction.getDenominator());
     }
 
 }
