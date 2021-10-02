@@ -13,4 +13,12 @@ public class Searches {
                 .map(Fraction::decimal);
     }
 
+    public Stream<String> findUserFamilyNameByAllNegativeSignFractionDistinct() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(fraction -> fraction.decimal() <0))
+                .map(User::getFamilyName)
+                .distinct();
+    }
+
 }
