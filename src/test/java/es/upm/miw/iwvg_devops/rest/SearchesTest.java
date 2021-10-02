@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.rest;
 
+import es.upm.miw.iwvg_devops.practica.Fraction;
 import es.upm.miw.iwvg_devops.practica.Searches;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +27,12 @@ public class SearchesTest {
     void testfindDecimalImproperFractionByUserName() {
         assertEquals(List.of(2.0, 1.3333333333333333), new Searches().findDecimalImproperFractionByUserName("Ana")
                 .collect(Collectors.toList()));
+    }
+
+    @Test
+    void testfindFractionDivisionByUserId() {
+        assertEquals(60, new Searches().findFractionDivisionByUserId("2").getNumerator());
+        assertEquals(-16, new Searches().findFractionDivisionByUserId("2").getDenominator());
     }
 
 }
