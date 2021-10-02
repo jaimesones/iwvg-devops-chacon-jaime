@@ -29,4 +29,14 @@ public class Searches {
                 .map(Fraction::decimal);
     }
 
+    public Fraction findFractionDivisionByUserId(String id) {
+        return new UsersDatabase().findAll()
+                .filter(user -> id.equals(user.getId()))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(new Fraction(1,1), (subtotal, element) -> {
+                    subtotal.divide (element);
+                    return subtotal;
+                });
+    }
+
 }
