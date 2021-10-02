@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SearchesTest {
 
     @Test
-    void testFindUserFractionNumeratorByFamilyName() {
+    void testfindDecimalFractionByUserName() {
         assertEquals(List.of(2.0, -0.2, 0.5, 1.3333333333333333), new Searches().findDecimalFractionByUserName("Ana")
                 .collect(Collectors.toList()));
     }
